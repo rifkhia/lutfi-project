@@ -1,11 +1,9 @@
-FROM ubuntu:20.04
+FROM python:3.11-slim-bookworm
 
-WORKDIR /app
+COPY . /local
 
-COPY . .
+WORKDIR /local
 
-RUN apt-get update && apt-get install -y python3 python3-pip
+RUN pip install fastapi uvicorn 'fastapi[standard]'
 
-RUN pip install fastapi uvicorn
-
-ENTRYPOINT ["uvicorn", "main:app", "--reload"]
+CMD ["fastapi", "run", "app.py"]
