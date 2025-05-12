@@ -428,7 +428,7 @@ async def get_sistem_tanaman_condition():
 
 
 @app.put("/lamp/{lamp_id}")
-async def set_lamp_condition(lamp_id, lamp_condition):
+async def set_lamp_condition(lamp_id):
     conn = get_database_connection()
     cursor = conn.cursor()
 
