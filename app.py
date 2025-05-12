@@ -453,7 +453,7 @@ async def set_lamp_condition(lamp_id):
     conn.commit()
     conn.close()
     return {
-        "message": f"successfully turn {lamp_condition} for lamp {lamp_id}"
+        "message": f"successfully switch for lamp {lamp_id}"
     }
 
 
